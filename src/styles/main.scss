@@ -1,0 +1,41 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, system-ui, Arial;
+  margin: 0;
+  padding: 16px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.player {
+  text-align: center;
+}
+
+.player .name {
+  font-weight: 600;
+}
+
+.player .score {
+  font-size: 28px;
+  margin-top: 6px;
+}
+
+.modes{
+  display: flex;
+  justify-content: center;
+}

@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Board from "./components/Board";
+import "./styles/main.scss";
+import type { Player } from "./types";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [p1, setP1] = useState<Player>({
+    id: "player1",
+    name: "Player 1",
+    score: 0,
+    choice: null,
+  });
+  const [p2, setP2] = useState<Player>({
+    id: "player2",
+    name: "Player 2",
+    score: 0,
+    choice: null,
+  });
+  const [mode, setMode] = useState<string>("");
+
+  function reset() {
+    setP1((s) => ({ ...s, lastChoice: null, score: 0 }));
+    setP2((s) => ({ ...s, lastChoice: null, score: 0 }));
+  }
 
   return (
-    <>
+    <div>
+      <h1>Rock • Paper • Scissors</h1>
+      <div className="modes">
+        <select value={mode} onChange={(e) => setMode(e.target.value as any)}>
+          <option value="1">Player vs Player</option>
+          <option value="2">Player vs Computer</option>
+          <option value="3">Computer vs Computer</option>
+        </select>
+        <button onClick={reset}>Reset</button>
+      </div>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Board p1={p1} p2={p2} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
