@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Rock Paper Scissors App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- A React Js interactive Rock Paper Scissors game built with TypeScript and Vite.
 
-Currently, two official plugins are available:
+### Time spent
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- between 6 and 7 hours
+- i didn't do it in one shot, sorry, i had to split the work into multiple shots (familly duties =p)
 
-## React Compiler
+### Rules
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Rock** - Beats Scissors (rock crushes scissors)
+- **Paper** - Beats Rock (paper covers rock)
+- **Scissors** - Beats Paper (scissors cut paper)
 
-## Expanding the ESLint configuration
+### Game Flow
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Each player (you and the computer[named it SAITAMA (one punch man anime for the refrence) for fun]) simultaneously choose one of three moves: Rock, Paper, or Scissors
+- The moves are compared according to the rules above
+- If both players choose the same move, it's a tie
+- The player with the winning move scores a point
+- The game continues for multiple rounds
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Winning
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beats Paper
+- If both players choose the same option, it's a draw (no points awarded)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Node.js (i'm running node 20)
+- Yarn package manager
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Install deps
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- yarn install
+
+## Development
+
+To run the development server:
+
+- yarn dev
+
+## Build
+
+- yarn build
+
+## Contacts
+
+- Email : aniss.harrachif@gmail.com
+- Phone : +33 7 510 511 44
+
+## Many thanks, it was fun, i wish i could push the game further, but i think the code shows my reflections, also, i didn't use external libraries as MUI5, Kendo Ui or others, i really wanted to it without any external libraries
