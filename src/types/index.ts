@@ -6,3 +6,7 @@ export interface Player {
   score: number;
   choice: Choice;
 }
+
+export interface GameConfig {
+  totalRounds: number;
+}
